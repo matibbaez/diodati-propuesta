@@ -1,0 +1,532 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+---
+
+<style>
+  /* Animación de movimiento lento para los fondos */
+  @keyframes float-slow {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(30px, -50px) rotate(5deg); }
+    66% { transform: translate(-20px, 20px) rotate(-5deg); }
+  }
+  .animate-float-slow {
+    animation: float-slow 20s infinite ease-in-out alternate;
+  }
+
+  /* Animación de "respiración" para la forma de la imagen */
+  @keyframes morph-blob {
+    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  }
+  .animate-morph {
+    animation: morph-blob 8s infinite ease-in-out alternate;
+  }
+
+  /* Gradiente metálico para el texto destacado */
+  .text-gradient-accent {
+    background: linear-gradient(135deg, var(--color-accent), #EDA990);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>
+
+<Layout title="Diodati & Asociados | Abogada Profesional">
+  <Navbar />
+
+  <main>
+    
+    <section id="inicio" class="relative min-h-screen flex items-center pt-32 pb-16 lg:pt-40 lg:pb-32 overflow-hidden bg-[radial-gradient(ellipse_at_top_left,_var(--color-primary)_0%,_#2A283E_100%)] w-full max-w-[100vw]">
+      
+      <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-[-10%] left-[-20%] md:left-[-10%] w-[300px] h-[300px] md:w-[800px] md:h-[800px] bg-[#5A5675] rounded-full blur-[80px] md:blur-[120px] opacity-40 animate-float-slow" style="animation-delay: 0s;"></div>
+        <div class="absolute bottom-[-10%] right-[-20%] md:right-[-10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-[var(--color-accent)] rounded-full blur-[100px] md:blur-[150px] opacity-30 animate-float-slow" style="animation-delay: -5s;"></div>
+      </div>
+      
+      <div class="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none" style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');"></div>
+
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10 w-full">
+        
+        <div class="lg:col-span-7 space-y-8 lg:space-y-10 text-center lg:text-left animate-fade-in-up">
+          
+          <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 py-2 px-4 rounded-full">
+            <span class="w-2 h-2 bg-[var(--color-accent)] rounded-full animate-pulse"></span>
+            <span class="text-white text-[10px] md:text-xs font-bold uppercase tracking-widest">
+              Abogacía Moderna & Humana
+            </span>
+          </div>
+          
+          <h1 class="text-4xl md:text-7xl xl:text-8xl text-white font-serif font-black leading-[1.1] md:leading-[0.95] tracking-tight">
+            Tu confianza, <br>
+            <span class="text-gradient-accent italic font-light relative z-10 pr-4 pb-1 inline-block">
+              nuestro compromiso.
+            </span>
+          </h1>
+          
+          <p class="text-white/80 text-base md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 font-light font-sans border-l-0 lg:border-l-2 border-[var(--color-accent)]/50 lg:pl-6 px-4 lg:px-0">
+            Reinventamos la experiencia legal. Asesoramiento jurídico integral en Civil, Comercial y Laboral con un enfoque cercano, claro y estratégico.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+            <a href="#contacto" class="btn-primary shadow-[0_10px_30px_rgba(217,119,83,0.4)] hover:shadow-[0_15px_40px_rgba(217,119,83,0.6)] px-8 py-4 text-sm md:text-base w-full sm:w-auto text-center">
+              Agendar Consulta Privada
+            </a>
+            <a href="#areas" class="btn-outline border-white/30 hover:bg-white/10 px-8 py-4 text-sm md:text-base group w-full sm:w-auto text-center flex justify-center items-center gap-2">
+              Conocer Servicios <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative flex justify-center lg:justify-end mt-8 lg:mt-0">
+           
+           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-[var(--color-accent)]/30 blur-[60px] rounded-full -z-10 animate-pulse-slow pointer-events-none"></div>
+
+           <div class="relative w-[300px] h-[380px] md:w-[450px] md:h-[550px] animate-morph overflow-hidden shadow-2xl border-4 border-white/10 z-10 group bg-[#2A283E]">
+             <div class="absolute inset-0 bg-[var(--color-primary)]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+             
+             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop" 
+                  alt="Maria Fernanda Diodati - Abogada" 
+                  class="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 ease-in-out" />
+           </div>
+
+           <div class="hidden md:block absolute -bottom-10 -left-10 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl shadow-lg z-30 animate-float-slow" style="animation-delay: -2s;">
+             <p class="font-serif text-[var(--color-accent)] font-bold text-2xl">Letrados</p>
+             <p class="text-white text-xs uppercase tracking-widest">Excelencia & Empatía</p>
+           </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="areas" class="py-24 bg-[var(--color-bg-soft)] relative">
+      
+      <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        
+        <div class="text-center mb-20">
+          <span class="text-[var(--color-accent)] font-bold uppercase tracking-widest text-xs mb-3 block">Nuestros Servicios</span>
+          <h2 class="font-serif text-4xl md:text-5xl text-[var(--color-primary)] font-bold mb-6">Asesoramiento Jurídico Integral</h2>
+          <div class="w-24 h-1.5 bg-[var(--color-accent)] mx-auto rounded-full opacity-30"></div>
+          <p class="text-gray-600 mt-8 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+            Combinamos experiencia técnica con una visión estratégica para abordar las principales ramas del derecho con solvencia y eficacia.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+          
+          <div class="group bg-white p-10 rounded-[30px] shadow-sm hover:shadow-[0_20px_40px_rgba(217,119,83,0.15)] transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-[var(--color-accent)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+            
+            <div class="w-16 h-16 bg-[var(--color-bg-soft)] rounded-2xl flex items-center justify-center text-[var(--color-accent)] mb-8 group-hover:bg-[var(--color-accent)] group-hover:text-white transition-all duration-500 shadow-inner">
+              <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            </div>
+            
+            <h3 class="font-serif text-2xl font-bold text-[var(--color-primary)] mb-4">Derecho Civil y Familia</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">
+              Protegemos tus vínculos y tu patrimonio con sensibilidad y firmeza jurídica en los momentos más delicados.
+            </p>
+            
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <svg class="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                Divorcios y Uniones Convivenciales
+              </li>
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <svg class="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                Alimentos y Régimen de Comunicación
+              </li>
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <svg class="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                Sucesiones y Herencias
+              </li>
+            </ul>
+          </div>
+
+          <div class="group bg-white p-10 rounded-[30px] shadow-sm hover:shadow-[0_20px_40px_rgba(62,59,86,0.15)] transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+             <div class="absolute top-0 left-0 w-full h-1 bg-[var(--color-primary)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+
+            <div class="w-16 h-16 bg-[var(--color-bg-soft)] rounded-2xl flex items-center justify-center text-[var(--color-primary)] mb-8 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all duration-500 shadow-inner">
+              <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            </div>
+            
+            <h3 class="font-serif text-2xl font-bold text-[var(--color-primary)] mb-4">Derecho Laboral</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">
+              Defensa estratégica de derechos del trabajador y asesoramiento preventivo para empleadores ante conflictos.
+            </p>
+            
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <svg class="w-4 h-4 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                Despidos (Con/Sin Causa)
+              </li>
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <svg class="w-4 h-4 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                Trabajo no Registrado ("En negro")
+              </li>
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <svg class="w-4 h-4 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                Accidentes de Trabajo (ART)
+              </li>
+            </ul>
+          </div>
+
+          <div class="group bg-white p-10 rounded-[30px] shadow-sm hover:shadow-[0_20px_40px_rgba(217,119,83,0.15)] transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+             <div class="absolute top-0 left-0 w-full h-1 bg-[var(--color-accent)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+
+            <div class="w-16 h-16 bg-[var(--color-bg-soft)] rounded-2xl flex items-center justify-center text-[var(--color-accent)] mb-8 group-hover:bg-[var(--color-accent)] group-hover:text-white transition-all duration-500 shadow-inner">
+              <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+            </div>
+            
+            <h3 class="font-serif text-2xl font-bold text-[var(--color-primary)] mb-4">Derecho Comercial</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">
+              Soporte legal para negocios y empresas. Blindaje jurídico en contratos y resolución de disputas comerciales.
+            </p>
+            
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <svg class="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                Contratos y Negociaciones
+              </li>
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <svg class="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                Asesoramiento a PyMEs
+              </li>
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <svg class="w-4 h-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                Ejecuciones Comerciales
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="py-24 bg-white relative overflow-hidden">
+      
+      <div class="absolute right-0 top-0 w-1/3 h-full bg-[var(--color-bg-soft)] -skew-x-12 translate-x-20 z-0"></div>
+
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          
+          <div class="order-2 lg:order-1">
+            <span class="text-[var(--color-accent)] font-bold uppercase tracking-widest text-xs mb-2 block">Nuestra Filosofía</span>
+            <h2 class="font-serif text-3xl md:text-4xl text-[var(--color-primary)] font-bold mb-6 leading-tight">
+              Entendemos que detrás de cada caso, <br> hay una historia.
+            </h2>
+            <p class="text-gray-600 text-lg mb-10 leading-relaxed">
+              No creemos en los abogados distantes. Nuestro enfoque combina el rigor técnico con la calidez humana. Te acompañamos en cada paso del proceso con un lenguaje claro y sin vueltas.
+            </p>
+
+            <div class="space-y-8">
+              
+              <div class="flex gap-5 group">
+                <div class="w-12 h-12 rounded-full bg-[var(--color-bg-soft)] flex items-center justify-center text-[var(--color-primary)] group-hover:bg-[var(--color-accent)] group-hover:text-white transition-all duration-300 shrink-0">
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                </div>
+                <div>
+                  <h4 class="font-serif font-bold text-[var(--color-primary)] text-lg">Comunicación Clara</h4>
+                  <p class="text-sm text-gray-500 mt-1 leading-relaxed">
+                    Te explicamos tu situación legal sin tecnicismos complejos. Queremos que entiendas tus opciones reales.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-5 group">
+                <div class="w-12 h-12 rounded-full bg-[var(--color-bg-soft)] flex items-center justify-center text-[var(--color-primary)] group-hover:bg-[var(--color-accent)] group-hover:text-white transition-all duration-300 shrink-0">
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <div>
+                  <h4 class="font-serif font-bold text-[var(--color-primary)] text-lg">Honestidad Profesional</h4>
+                  <p class="text-sm text-gray-500 mt-1 leading-relaxed">
+                    No generamos falsas expectativas. Evaluamos la viabilidad de tu caso desde el primer día con total transparencia.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-5 group">
+                <div class="w-12 h-12 rounded-full bg-[var(--color-bg-soft)] flex items-center justify-center text-[var(--color-primary)] group-hover:bg-[var(--color-accent)] group-hover:text-white transition-all duration-300 shrink-0">
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <div>
+                  <h4 class="font-serif font-bold text-[var(--color-primary)] text-lg">Agilidad en la Gestión</h4>
+                  <p class="text-sm text-gray-500 mt-1 leading-relaxed">
+                    Sabemos que los tiempos legales pueden ser frustrantes. Nos ocupamos de impulsar tu expediente activamente.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="order-1 lg:order-2 relative">
+             
+             <div class="bg-[var(--color-primary)] text-white p-10 rounded-tr-[80px] rounded-bl-[80px] shadow-2xl relative z-10">
+                <svg class="w-12 h-12 text-[var(--color-accent)] mb-6 opacity-80" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.0548 15.3813 14.3736 17.2626 14.0503C17.7029 13.9749 18.0174 13.5937 18.0174 13.1472V11C18.0174 10.4477 17.5697 10 17.0174 10C15.9128 10 15.0174 9.10457 15.0174 8V5C15.0174 3.89543 15.9128 3 17.0174 3H19.0174C20.122 3 21.0174 3.89543 21.0174 5V13.1472C21.0174 14.9332 19.7595 16.4578 18 16.7599V21H14.017ZM5 21L5 18C5 16.0548 6.36431 14.3736 8.24557 14.0503C8.68591 13.9749 9.00044 13.5937 9.00044 13.1472V11C9.00044 10.4477 8.55272 10 8.00044 10C6.89587 10 6.00044 9.10457 6.00044 8V5C6.00044 3.89543 6.89587 3 8.00044 3H10.0004C11.105 3 12.0004 3.89543 12.0004 5V13.1472C12.0004 14.9332 10.7425 16.4578 8.98303 16.7599V21H5Z"/></svg>
+                
+                <p class="font-serif text-xl italic leading-relaxed mb-8 opacity-90">
+                  "Nuestro objetivo no es solo ganar un caso, sino devolverle la tranquilidad al cliente. La confianza se construye con resultados, pero se mantiene con honestidad."
+                </p>
+                
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center font-bold text-white text-lg">MD</div>
+                  <div>
+                    <p class="font-bold text-white">Maria Fernanda Diodati</p>
+                    <p class="text-[var(--color-accent)] text-xs uppercase tracking-widest">Abogada Titular</p>
+                  </div>
+                </div>
+             </div>
+
+             <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-[var(--color-accent)] rounded-tr-[80px] rounded-bl-[80px] z-0 opacity-30"></div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-[var(--color-primary)] text-white relative overflow-hidden">
+      
+      <div class="absolute inset-0 opacity-[0.05]" 
+           style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #D97753 10px, #D97753 11px);">
+      </div>
+      
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--color-primary-light)]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        
+        <div class="text-center mb-16">
+          <span class="text-[var(--color-accent)] font-bold uppercase tracking-widest text-xs mb-2 block">Tu tranquilidad, paso a paso</span>
+          <h2 class="font-serif text-3xl md:text-4xl font-bold">El camino hacia la solución</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12 relative">
+          
+          <div class="hidden md:block absolute top-12 left-0 w-full h-[2px] bg-white/10 -z-10"></div>
+
+          <div class="group relative">
+            <div class="w-24 h-24 mx-auto bg-[var(--color-primary)] border-4 border-[var(--color-accent)] rounded-full flex items-center justify-center text-3xl font-serif font-bold mb-6 shadow-[0_0_30px_rgba(217,119,83,0.3)] group-hover:bg-[var(--color-accent)] group-hover:scale-110 transition-all duration-500">
+              1
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-center">Consulta Inicial</h3>
+            <p class="text-gray-300 text-sm text-center leading-relaxed px-4">
+              Analizamos tu caso en profundidad. Te escuchamos y evaluamos la documentación para darte un diagnóstico honesto y claro.
+            </p>
+          </div>
+
+          <div class="group relative">
+            <div class="w-24 h-24 mx-auto bg-[var(--color-primary)] border-4 border-[var(--color-accent)] rounded-full flex items-center justify-center text-3xl font-serif font-bold mb-6 shadow-[0_0_30px_rgba(217,119,83,0.3)] group-hover:bg-[var(--color-accent)] group-hover:scale-110 transition-all duration-500 delay-150">
+              2
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-center">Estrategia</h3>
+            <p class="text-gray-300 text-sm text-center leading-relaxed px-4">
+              Diseñamos el plan de acción legal a medida. Definimos los tiempos, costos y los pasos a seguir para proteger tus intereses.
+            </p>
+          </div>
+
+          <div class="group relative">
+            <div class="w-24 h-24 mx-auto bg-[var(--color-primary)] border-4 border-[var(--color-accent)] rounded-full flex items-center justify-center text-3xl font-serif font-bold mb-6 shadow-[0_0_30px_rgba(217,119,83,0.3)] group-hover:bg-[var(--color-accent)] group-hover:scale-110 transition-all duration-500 delay-300">
+              3
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-center">Resolución</h3>
+            <p class="text-gray-300 text-sm text-center leading-relaxed px-4">
+              Ejecutamos la defensa o negociación. Te mantenemos informado hasta lograr el acuerdo o sentencia favorable.
+            </p>
+          </div>
+
+        </div>
+        
+        <div class="text-center mt-16">
+          <a href="#contacto" class="inline-flex items-center gap-2 text-[var(--color-accent)] border-b border-[var(--color-accent)] pb-1 hover:text-white hover:border-white transition-all font-bold uppercase text-xs tracking-widest">
+            Comenzar ahora <span class="text-lg">→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contacto" class="py-24 bg-white relative">
+      
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-16">
+          
+          <div class="lg:col-span-5">
+            <div class="bg-[var(--color-primary)] text-white p-10 rounded-tr-[60px] rounded-bl-[60px] shadow-2xl relative overflow-hidden">
+              
+              <div class="absolute top-0 right-0 w-32 h-32 bg-[var(--color-accent)]/20 rounded-full blur-2xl -mr-10 -mt-10"></div>
+
+              <span class="text-[var(--color-accent)] font-bold uppercase tracking-widest text-xs mb-4 block">Empecemos a hablar</span>
+              <h2 class="font-serif text-3xl font-bold mb-6">Consulta Online</h2>
+              <p class="text-gray-300 text-sm mb-8">
+                Déjanos tus datos y una breve descripción de tu caso. Te responderemos a la brevedad para coordinar una entrevista.
+              </p>
+
+              <form class="space-y-5">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider mb-2 text-gray-400">Tu Nombre</label>
+                  <input type="text" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="Nombre completo" />
+                </div>
+                
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider mb-2 text-gray-400">Contacto</label>
+                  <input type="tel" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="Teléfono o Email" />
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider mb-2 text-gray-400">Mensaje</label>
+                  <textarea rows="3" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[var(--color-accent)] transition-colors resize-none" placeholder="Breve relato del caso..."></textarea>
+                </div>
+
+                <button class="w-full bg-[var(--color-accent)] text-white font-bold py-4 rounded-full shadow-lg hover:bg-[var(--color-accent-hover)] transition-all transform hover:-translate-y-1 mt-2">
+                  Enviar Consulta
+                </button>
+              </form>
+
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 flex flex-col justify-center">
+            
+            <div class="mb-10">
+              <h2 class="font-serif text-3xl md:text-4xl text-[var(--color-primary)] font-bold mb-6">
+                Estamos cerca tuyo.
+              </h2>
+              <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                Nuestras oficinas están pensadas para brindarte un espacio de privacidad y tranquilidad. Atendemos en <strong>Zona Oeste y Ciudad de Buenos Aires</strong>.
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-6">
+                
+                <a href="https://wa.me/541158156132" class="flex items-center gap-4 p-4 rounded-xl bg-[var(--color-bg-soft)] border border-transparent hover:border-[var(--color-accent)] transition-colors group">
+                  <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[var(--color-primary)] shadow-sm group-hover:text-[var(--color-accent)] transition-colors">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-500 font-bold uppercase tracking-wide">WhatsApp</p>
+                    <p class="text-[var(--color-primary)] font-bold">11 5815-6132</p>
+                  </div>
+                </a>
+
+                <a href="mailto:info@diodati.com" class="flex items-center gap-4 p-4 rounded-xl bg-[var(--color-bg-soft)] border border-transparent hover:border-[var(--color-accent)] transition-colors group">
+                  <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[var(--color-primary)] shadow-sm group-hover:text-[var(--color-accent)] transition-colors">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-500 font-bold uppercase tracking-wide">Email</p>
+                    <p class="text-[var(--color-primary)] font-bold">info@diodati.com</p>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+
+            <div class="w-full h-[300px] rounded-2xl overflow-hidden shadow-lg relative bg-gray-100">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.330949424317!2d-58.3815706!3d-34.6036844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses!2sar!4v1625686000000!5m2!1ses!2sar" 
+                width="100%" 
+                height="100%" 
+                style="border:0; filter: grayscale(100%) contrast(1.1);" 
+                allowfullscreen="" 
+                loading="lazy">
+              </iframe>
+              
+              <div class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-lg shadow-md flex items-center gap-2 text-xs font-bold text-[var(--color-primary)]">
+                <span class="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse"></span>
+                Zona Oeste / CABA
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[var(--color-primary)] text-white pt-16 pb-8 border-t-4 border-[var(--color-accent)] font-sans">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          
+          <div class="space-y-6">
+            <div class="flex flex-col leading-none">
+              <span class="font-serif text-2xl font-bold tracking-wide text-white">DIODATI</span>
+              <span class="text-[10px] uppercase tracking-[0.3em] text-[var(--color-accent)] font-bold">& Asociados</span>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed max-w-xs">
+              Brindamos soluciones legales con un enfoque humano, priorizando la comunicación clara y la defensa firme de sus intereses.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-serif font-bold text-lg mb-6 flex items-center gap-2">
+              <span class="w-1 h-6 bg-[var(--color-accent)] rounded-full"></span>
+              El Estudio
+            </h4>
+            <ul class="space-y-3 text-sm text-gray-300">
+              <li><a href="#inicio" class="hover:text-[var(--color-accent)] transition-colors inline-flex items-center gap-2 hover:translate-x-1 duration-300">Inicio</a></li>
+              <li><a href="#nosotros" class="hover:text-[var(--color-accent)] transition-colors inline-flex items-center gap-2 hover:translate-x-1 duration-300">Sobre Nosotros</a></li>
+              <li><a href="#areas" class="hover:text-[var(--color-accent)] transition-colors inline-flex items-center gap-2 hover:translate-x-1 duration-300">Áreas de Práctica</a></li>
+              <li><a href="#contacto" class="hover:text-[var(--color-accent)] transition-colors inline-flex items-center gap-2 hover:translate-x-1 duration-300 font-bold">Solicitar Turno</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-serif font-bold text-lg mb-6 flex items-center gap-2">
+              <span class="w-1 h-6 bg-[var(--color-accent)] rounded-full"></span>
+              Servicios
+            </h4>
+            <ul class="space-y-3 text-sm text-gray-300">
+              <li><a href="#areas" class="hover:text-white transition-colors">Derecho Laboral</a></li>
+              <li><a href="#areas" class="hover:text-white transition-colors">Derecho Civil</a></li>
+              <li><a href="#areas" class="hover:text-white transition-colors">Derecho Comercial</a></li>
+              <li><a href="#areas" class="hover:text-white transition-colors">Sucesiones y Familia</a></li>
+              <li><a href="#areas" class="hover:text-white transition-colors">Contratos</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-serif font-bold text-lg mb-6 flex items-center gap-2">
+              <span class="w-1 h-6 bg-[var(--color-accent)] rounded-full"></span>
+              Contacto
+            </h4>
+            <ul class="space-y-4 text-sm text-gray-300">
+              <li class="flex items-start gap-3">
+                <div class="mt-1 text-[var(--color-accent)]">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>Atención presencial y virtual<br>Zona Oeste / CABA</span>
+              </li>
+              
+              <li class="flex items-center gap-3">
+                <div class="text-[var(--color-accent)]">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                </div>
+                <a href="https://wa.me/541158156132" class="hover:text-[var(--color-accent)] transition-colors">11 5815-6132</a>
+              </li>
+
+              <li class="flex items-center gap-3">
+                <div class="text-[var(--color-accent)]">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                </div>
+                <a href="mailto:info@diodati.com" class="hover:text-[var(--color-accent)] transition-colors">info@diodati.com</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+          <p>&copy; {new Date().getFullYear()} Maria Fernanda Diodati. Todos los derechos reservados.</p>
+          <div class="flex gap-6">
+            <span>Matrícula Profesional Tº XX Fº XXX</span>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </main>
+</Layout>

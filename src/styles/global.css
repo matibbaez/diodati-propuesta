@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta Diodati: Violeta Pizarra y Terracota */
+  --color-primary: #3E3B56;     /* Violeta Oscuro (Del fondo de la tarjeta) */
+  --color-primary-light: #5A5675; /* Violeta más claro para hovers */
+  --color-accent: #D97753;      /* Terracota/Naranja (De la piel/ropa ilustración) */
+  --color-accent-hover: #C06040; /* Terracota oscuro */
+  --color-bg-soft: #F5F3FF;     /* Un lila/gris muy muy suave de fondo */
+  
+  /* Fuentes */
+  --font-serif: "Merriweather", serif; /* Confiable y editorial */
+  --font-sans: "Lato", sans-serif;     /* Limpia y moderna */
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: white;
+  color: var(--color-primary);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+}
+
+/* Botón Principal (Terracota) */
+.btn-primary {
+  background-color: var(--color-accent);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px; /* Bordes redondos para ser más amigable */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(217, 119, 83, 0.3);
+}
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(217, 119, 83, 0.4);
+}
+
+/* Botón Secundario (Borde Violeta) */
+.btn-outline {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background-color: white;
+  color: var(--color-primary);
+}
