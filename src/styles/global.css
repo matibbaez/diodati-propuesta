@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Paleta Diodati: Violeta Pizarra y Terracota */
+  /* Paleta Dioanti: Violeta Pizarra y Terracota */
   --color-primary: #3E3B56;     /* Violeta Oscuro (Del fondo de la tarjeta) */
   --color-primary-light: #5A5675; /* Violeta más claro para hovers */
   --color-accent: #D97753;      /* Terracota/Naranja (De la piel/ropa ilustración) */
